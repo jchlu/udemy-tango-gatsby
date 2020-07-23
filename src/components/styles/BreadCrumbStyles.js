@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const BreadCrumbWrapper = styled.div`
   font-family: 'Teko', Arial, Helvetica, sans-serif;
@@ -14,4 +14,4 @@ export const BreadCrumbWrapper = styled.div`
   span:hover {
     color: #d22e26;
   }
-`;
+`

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const AboutWrapper = styled.div`
   background: #ddd;
@@ -18,4 +18,4 @@ export const AboutWrapper = styled.div`
       padding: 20px 20px 20px 20px;
     }
   }
-`;
+`

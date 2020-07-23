@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Img from 'gatsby-image';
+import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 export const StyledImg = styled(Img)`
   img {
@@ -13,7 +13,7 @@ export const StyledImg = styled(Img)`
       max-height: 300px;
     }
   }
-`;
+`
 
 export const CTAImage = styled.div`
   margin-bottom: 20px;
@@ -32,7 +32,7 @@ export const CTAImage = styled.div`
   @media (min-width: 768px) {
     max-height: 300px;
   }
-`;
+`
 
 export const CTAImageTextWrapper = styled.div`
   position: absolute;
@@ -45,7 +45,7 @@ export const CTAImageTextWrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-`;
+`
 
 export const CTAImageText = styled.p`
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -68,4 +68,4 @@ export const CTAImageText = styled.p`
   @media (min-width: 1200px) {
     font-size: 1.5rem;
   }
-`;
+`

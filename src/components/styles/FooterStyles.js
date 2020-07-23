@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const FooterWrapper = styled.footer`
   background: #212121;
@@ -61,4 +61,4 @@ export const FooterWrapper = styled.footer`
   .facebook {
     margin-left: 5px;
   }
-`;
+`

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const HamburgerButton = styled.div`
   img {
@@ -20,4 +20,4 @@ export const HamburgerButton = styled.div`
       display: none;
     }
   }
-`;
+`

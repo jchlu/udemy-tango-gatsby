@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const SidebarWrapper = styled.aside`
   margin: 40px 0 0 0;
@@ -6,7 +6,7 @@ export const SidebarWrapper = styled.aside`
   @media (min-width: 992px) {
     margin: 125px 0 0 0;
   }
-`;
+`
 
 export const SidebarMenu = styled.ul`
   list-style-type: none;
@@ -56,7 +56,7 @@ export const SidebarMenu = styled.ul`
     width: 38px;
     height: auto;
   }
-`;
+`
 
 export const EducationBadge = styled.div`
   display: block;
@@ -80,4 +80,4 @@ export const EducationBadge = styled.div`
     color: #fff;
     font-weight: 200;
   }
-`;
+`

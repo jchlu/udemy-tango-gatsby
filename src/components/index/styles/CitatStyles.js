@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const CitatWrapper = styled.div`
   background: #4d4d4d;
@@ -11,4 +11,4 @@ export const CitatWrapper = styled.div`
     max-width: 40px;
     margin: 20px auto 40px auto;
   }
-`;
+`

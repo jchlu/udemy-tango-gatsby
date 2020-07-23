@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const SidebarWrapper = styled.aside`
   margin: 40px 0 0 0;
@@ -6,7 +6,7 @@ export const SidebarWrapper = styled.aside`
   @media (min-width: 992px) {
     margin: 125px 0 0 0;
   }
-`;
+`
 
 export const SidebarMenu = styled.ul`
   list-style-type: none;
@@ -61,4 +61,4 @@ export const SidebarMenu = styled.ul`
   span {
     margin: 0 0 0 40px;
   }
-`;
+`

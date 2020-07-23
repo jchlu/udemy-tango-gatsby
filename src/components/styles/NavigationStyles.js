@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const NavigationWrapper = styled.nav`
   margin: 5px 0 10px 0; /* just to give some spacing */
@@ -90,4 +90,4 @@ export const NavigationWrapper = styled.nav`
       opacity: 1;
     }
   }
-`;
+`

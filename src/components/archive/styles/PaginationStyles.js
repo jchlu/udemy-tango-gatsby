@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const PaginationWrapper = styled.nav`
   display: flex;
@@ -90,4 +90,4 @@ export const PaginationWrapper = styled.nav`
       border-left-color: #d22e26;
     }
   }
-`;
+`

@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import Img from 'gatsby-image';
+import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 export const StyledImg = styled(Img)`
   height: 800px;
-`;
+`
 
 export const WbnSlide = styled.div`
   position: absolute;
@@ -111,7 +111,7 @@ export const WbnSlide = styled.div`
       }
     }
   }
-`;
+`
 
 export const SliderWrapper = styled.div`
   position: relative;
@@ -154,7 +154,7 @@ export const SliderWrapper = styled.div`
   @media (min-width: 1200px) {
     height: 800px;
   }
-`;
+`
 
 export const ButtonWrapper = styled.div`
   display: flex;
@@ -171,7 +171,7 @@ export const ButtonWrapper = styled.div`
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-`;
+`
 
 export const Button = styled.button`
   display: flex;
@@ -193,4 +193,4 @@ export const Button = styled.button`
     opacity: 0.8;
     cursor: pointer;
   }
-`;
+`

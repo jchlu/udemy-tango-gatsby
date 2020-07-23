@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const SliderWrapper = styled.div`
   position: relative;
@@ -26,7 +26,7 @@ export const SliderWrapper = styled.div`
     opacity: 1;
     transform: scale(1);
   }
-`;
+`
 
 export const ButtonWrapper = styled.div`
   display: flex;
@@ -43,7 +43,7 @@ export const ButtonWrapper = styled.div`
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-`;
+`
 
 export const Button = styled.button`
   display: flex;
@@ -65,4 +65,4 @@ export const Button = styled.button`
     opacity: 0.8;
     cursor: pointer;
   }
-`;
+`
