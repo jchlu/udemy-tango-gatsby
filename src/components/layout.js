@@ -21,10 +21,11 @@ const Layout = ({ children }) => {
   }
   return (
     <>
+      <Header />
       <Hamburger handleOverlayMenu={handleOverlayMenu} />
       <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
-      <Primary id='primary' className='content-area'>
-        <main id='main' className='site-main' role='main'>
+      <Primary id="primary" className="content-area">
+        <main id="main" className="site-main" role="main">
           {children}
         </main>
       </Primary>
@@ -34,7 +35,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout
