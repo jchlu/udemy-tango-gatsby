@@ -11,29 +11,23 @@ export default ({ social }) => {
       case 'linkedIn':
         href = `https://linked.com/in/${item.profile}`
         return (
-          <>
-            <a target="_blank" rel="noopener noreferrer" href={href}>
-              <img src={TangoLogoLI} alt="linkedin-logo" />
-            </a>
-          </>
+          <a key={i} target="_blank" rel="noopener noreferrer" href={href}>
+            <img src={TangoLogoLI} alt="linkedin-logo" />
+          </a>
         )
       case 'instagram':
         href = `https://instagram.com/${item.profile}`
         return (
-          <>
-            <a target="_blank" rel="noopener noreferrer" href={href}>
-              <img src={TangoLogoIN} alt="instagram-logo" />
-            </a>
-          </>
+          <a key={i} target="_blank" rel="noopener noreferrer" href={href}>
+            <img src={TangoLogoIN} alt="instagram-logo" />
+          </a>
         )
       case 'facebook':
         href = `https://facebook.com/${item.profile}`
         return (
-          <>
-            <a target="_blank" rel="noopener noreferrer" href={href}>
-              <img src={TangoLogoFB} alt="facebook-logo" />
-            </a>
-          </>
+          <a key={i} target="_blank" rel="noopener noreferrer" href={href}>
+            <img className="facebook" src={TangoLogoFB} alt="facebook-logo" />
+          </a>
         )
       default:
         return null
