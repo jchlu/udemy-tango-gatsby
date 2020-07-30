@@ -52,7 +52,21 @@ export default () => {
     },
     state.autoSlide ? state.interval : null
   )
-
+  const handlePrevClick = () => {
+    setState(prev => ({
+      ...prev,
+      autoSlide: false,
+      activeIndex:
+        (prev.activeIndex - 1 + prev.slides.length) % prev.slides.length,
+    }))
+  }
+  const handleNextClick = () => {
+    setState(prev => ({
+      ...prev,
+      autoSlide: false,
+      activeIndex: (prev.activeIndex + 1) % prev.slides.length,
+    }))
+  }
   return (
     <SliderWrapper>
       {slides.map((slide, i) => (
@@ -63,10 +77,10 @@ export default () => {
         />
       ))}
       <ButtonWrapper style={{ position: 'absolute', left: 0 }}>
-        <Button onClick={0}>&#9664;</Button>
+        <Button onClick={handlePrevClick}>&#9664;</Button>
       </ButtonWrapper>
       <ButtonWrapper style={{ position: 'absolute', right: 0 }}>
-        <Button onClick={0}>&#9654;</Button>
+        <Button onClick={handleNextClick}>&#9654;</Button>
       </ButtonWrapper>
       {/* {JSON.stringify(state, null, 2)} */}
     </SliderWrapper>
