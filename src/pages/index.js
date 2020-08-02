@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 import HeroSlider from '../components/index/hero-slider'
 import CTAImages from '../components/index/cta-images'
 import LatestTrend from '../components/index/latest-trend'
-import Quotation from '../components/index/quotation'
+import Quote from '../components/index/quote'
 import About from '../components/index/about'
 
 export default () => (
@@ -15,7 +15,7 @@ export default () => (
     <HeroSlider />
     <CTAImages />
     <LatestTrend />
-    <Quotation />
+    <Quote />
     <About />
   </Layout>
 )
