@@ -10,14 +10,16 @@ const PageContent = styled.article`
   margin: 20px 0 0 0;
 `
 
-const PageTemplate = ({ data }) => (
+const PageTemplate = ({
+  data: { currentPage, parent, siblings, children },
+}) => (
   <Layout>
-    {data.currentPage.featured_media ? (
+    {currentPage.featured_media ? (
       <PageHero
-        img={data.currentPage.featured_media.localFile.childImageSharp.fluid}
+        img={currentPage.featured_media.localFile.childImageSharp.fluid}
       />
     ) : null}
-    <Breadcrumb parent={data.parent} />
+    <Breadcrumb parent={parent} />
     <div className="container">
       <div className="row" style={{ marginBottom: '40px' }}>
         <PageSidebar
@@ -25,19 +27,19 @@ const PageTemplate = ({ data }) => (
           siblings={siblings}
           parent={parent}
         >
-          {data.children}
+          {children}
         </PageSidebar>
         <PageContent className="col-lg-9">
-          <h1 dangerouslySetInnerHTML={{ __html: data.currentPage.title }} />
-          <div dangerouslySetInnerHTML={{ __html: data.currentPage.content }} />
+          <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+          <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
         </PageContent>
       </div>
     </div>
   </Layout>
 )
 
-export const pageQuery = graphql`
-  query($id: String!, $wpParent: Int!, $wpId: Int!) {
+export const query = graphql`
+  query PageTemplateQuery($id: String!, $wpParent: Int!, $wpId: Int!) {
     currentPage: wordpressPage(id: { eq: $id }) {
       title
       content
