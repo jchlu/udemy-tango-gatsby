@@ -38,6 +38,7 @@ module.exports = {
         ],
         baseUrl: `localhost:8080`,
         hostingWPCOM: false,
+        perPage: 100,
         useACF: true,
         searchAndReplaceContentUrls: {
           sourceUrl: `http://localhost:8080`,
