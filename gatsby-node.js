@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       const {
         link: path,
         id,
-        wordpress_parent: parent,
+        wordpress_parent: wpParent,
         wordpress_id: wpId,
       } = page
       createPage({
@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         component: slash(pageTemplate),
         context: {
           id,
-          parent,
+          wpParent,
           wpId,
         },
       })
