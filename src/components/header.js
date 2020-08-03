@@ -7,23 +7,21 @@ import { HeaderWrapper } from './styles/HeaderStyles'
 export default () => {
   const {
     site,
-    menu: {
-      edges: [{ node: menu }],
+    navigation: {
+      nodes: [{ items: menu }],
     },
   } = useStaticQuery(graphql`
     {
-      menu: allWordpressWpApiMenusMenusItems(
+      navigation: allWordpressWpApiMenusMenusItems(
         filter: { wordpress_id: { eq: 5 } }
       ) {
-        edges {
-          node {
-            items {
+        nodes {
+          items {
+            title
+            url
+            wordpress_children {
               title
               url
-              wordpress_children {
-                title
-                url
-              }
             }
           }
         }

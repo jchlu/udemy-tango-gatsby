@@ -7,7 +7,7 @@ import { Overlay } from './styles/OverlayMenuStyles'
 export default ({ menuOpen, callback }) => {
   const {
     menu: {
-      edges: [{ node: menu }],
+      nodes: [{ items: menu }],
     },
   } = useStaticQuery(
     graphql`
@@ -15,12 +15,10 @@ export default ({ menuOpen, callback }) => {
         menu: allWordpressWpApiMenusMenusItems(
           filter: { wordpress_id: { eq: 5 } }
         ) {
-          edges {
-            node {
-              items {
-                title
-                url
-              }
+          nodes {
+            items {
+              title
+              url
             }
           }
         }
@@ -32,7 +30,7 @@ export default ({ menuOpen, callback }) => {
       <div className="inner">
         <img src={WhiteLogo} className="whiteLogo" alt="tango-logo-white"></img>
         <ul className="overlayMenu">
-          {menu.items.map((item, i) => (
+          {menu.map((item, i) => (
             <li key={i}>
               <Link to={item.url} activeClassName="overlayActive">
                 {item.title}

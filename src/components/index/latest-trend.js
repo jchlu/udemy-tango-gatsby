@@ -10,21 +10,15 @@ const LatestTrendWrapper = styled.div`
 export default () => {
   const {
     data: {
-      edges: [
-        {
-          node: { excerpt, title, slug },
-        },
-      ],
+      nodes: [{ excerpt, title, slug }],
     },
   } = useStaticQuery(graphql`
     {
       data: allWordpressPost(limit: 1, sort: { fields: date, order: DESC }) {
-        edges {
-          node {
-            excerpt
-            title
-            slug
-          }
+        nodes {
+          excerpt
+          title
+          slug
         }
       }
     }

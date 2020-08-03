@@ -6,30 +6,28 @@ import { SliderWrapper, ButtonWrapper, Button } from './styles/HeroSliderStyles'
 
 export default () => {
   const {
-    slides: { edges: slides },
+    overlay: { nodes: slides },
   } = useStaticQuery(graphql`
     {
-      slides: allWordpressWpBildspel {
-        edges {
-          node {
-            acf {
-              slider_button_link
-              slider_button_text
-              slider_header
-              slider_pre_header
-              slider_text
-            }
-            featured_media {
-              localFile {
-                childImageSharp {
-                  fluid(quality: 100, maxWidth: 4000) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
+      overlay: allWordpressWpBildspel {
+        nodes {
+          acf {
+            slider_button_link
+            slider_button_text
+            slider_header
+            slider_pre_header
+            slider_text
+          }
+          featured_media {
+            localFile {
+              childImageSharp {
+                fluid(quality: 100, maxWidth: 4000) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
-            id
           }
+          id
         }
       }
     }
@@ -70,11 +68,7 @@ export default () => {
   return (
     <SliderWrapper>
       {slides.map((slide, i) => (
-        <Slide
-          key={slide.node.id}
-          slide={slide.node}
-          active={state.activeIndex === i}
-        />
+        <Slide key={slide.id} slide={slide} active={state.activeIndex === i} />
       ))}
       <ButtonWrapper style={{ position: 'absolute', left: 0 }}>
         <Button onClick={handlePrevClick}>&#9664;</Button>
@@ -82,8 +76,6 @@ export default () => {
       <ButtonWrapper style={{ position: 'absolute', right: 0 }}>
         <Button onClick={handleNextClick}>&#9654;</Button>
       </ButtonWrapper>
-      {/* {JSON.stringify(state, null, 2)} */}
     </SliderWrapper>
   )
-  // return <pre>{JSON.stringify(slides, null, 2)}</pre>
 }
