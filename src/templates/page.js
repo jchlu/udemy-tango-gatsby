@@ -23,9 +23,10 @@ const PageTemplate = ({
     <div className="container">
       <div className="row" style={{ marginBottom: '40px' }}>
         <PageSidebar
+          children={children}
           currentPage={currentPage}
-          siblings={siblings}
           parent={parent}
+          siblings={siblings}
         >
           {children}
         </PageSidebar>
@@ -41,6 +42,7 @@ const PageTemplate = ({
 export const query = graphql`
   query PageTemplateQuery($id: String!, $wpParent: Int!, $wpId: Int!) {
     currentPage: wordpressPage(id: { eq: $id }) {
+      id
       title
       content
       wordpress_parent
@@ -58,6 +60,7 @@ export const query = graphql`
       }
     }
     parent: wordpressPage(wordpress_id: { eq: $wpParent }) {
+      id
       link
       title
     }
