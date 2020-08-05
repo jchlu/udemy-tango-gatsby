@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import { BreadCrumbWrapper } from './styles/BreadCrumbStyles'
 import { siteMetadata } from '../../gatsby-config'
 
-export default ({ parent }) => (
+const Breadcrumb = ({ parent }) => (
   <BreadCrumbWrapper>
     <div className="container">
       <div className="row">
@@ -27,3 +28,7 @@ export default ({ parent }) => (
     </div>
   </BreadCrumbWrapper>
 )
+
+Breadcrumb.propTypes = { parent: PropTypes.object }
+
+export default Breadcrumb

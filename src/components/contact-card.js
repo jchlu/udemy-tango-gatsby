@@ -1,7 +1,8 @@
 import React from 'react'
 import SocialMedia from './social-media'
+import PropTypes from 'prop-types'
 
-export default ({ name, email, number, social }) => (
+const ContactCard = ({ name, email, number, social }) => (
   <div className="col-md-4">
     <h3>{name}</h3>
     <p className="tango-contact">
@@ -13,3 +14,12 @@ export default ({ name, email, number, social }) => (
     <SocialMedia social={social} />
   </div>
 )
+
+ContactCard.propTypes = {
+  name: PropTypes.string,
+  email: PropTypes.string,
+  number: PropTypes.string,
+  social: PropTypes.array,
+}
+
+export default ContactCard

@@ -3,8 +3,9 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import WhiteLogo from '../images/tango_logo_white.svg'
 import CloseButton from '../images/tango_close_button.svg'
 import { Overlay } from './styles/OverlayMenuStyles'
+import PropTypes from 'prop-types'
 
-export default ({ menuOpen, callback }) => {
+const OverlayMenu = ({ menuOpen, callback }) => {
   const {
     menu: {
       nodes: [{ items: menu }],
@@ -51,3 +52,7 @@ export default ({ menuOpen, callback }) => {
     </Overlay>
   )
 }
+
+OverlayMenu.propTypes = { menuOpen: PropTypes.bool, callback: PropTypes.func }
+
+export default OverlayMenu

@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import { StyledImg, WbnSlide } from './styles/HeroSliderStyles'
 
-export default ({ slide, active }) => (
+const Slide = ({ slide, active }) => (
   <WbnSlide className={active ? 'active' : ''}>
     <StyledImg fluid={slide.featured_media.localFile.childImageSharp.fluid} />
     <div className="wbn-overlay-text">
@@ -15,3 +16,10 @@ export default ({ slide, active }) => (
     </div>
   </WbnSlide>
 )
+
+Slide.propTypes = {
+  slide: PropTypes.object,
+  active: PropTypes.array,
+}
+
+export default Slide

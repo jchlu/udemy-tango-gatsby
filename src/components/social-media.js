@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import TangoLogoFB from '../images/tango-facebook-icon.svg'
 import TangoLogoIN from '../images/tango-instagram-icon.svg'
 import TangoLogoLI from '../images/tango-linkedin-icon.svg'
 
-export default ({ social }) => {
+const SocialMedia = ({ social }) => {
   let href = ''
   const payload = social.map((item, i) => {
     switch (item.service) {
@@ -35,3 +36,6 @@ export default ({ social }) => {
   })
   return <span className="social">{payload}</span>
 }
+
+SocialMedia.propTypes = { social: PropTypes.array }
+export default SocialMedia

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { NavigationWrapper } from './styles/NavigationStyles'
+import PropTypes from 'prop-types'
 
-export default ({ menu }) => (
+const Navigation = ({ menu }) => (
   <NavigationWrapper>
     <ul>
       {menu.map((item, i) => (
@@ -29,3 +30,7 @@ export default ({ menu }) => (
     </ul>
   </NavigationWrapper>
 )
+
+Navigation.propTypes = { menu: PropTypes.object }
+
+export default Navigation

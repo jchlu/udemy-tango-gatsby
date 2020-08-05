@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import {
   StyledImg,
@@ -8,7 +9,7 @@ import {
   CTAImageTextWrapper,
 } from './styles/CTAImagesStyles'
 
-export default ({ image, link, text }) => (
+const CTA = ({ image, link, text }) => (
   <CTAImage>
     <StyledImg fluid={image} />
     <Link to={link}>
@@ -18,3 +19,10 @@ export default ({ image, link, text }) => (
     </Link>
   </CTAImage>
 )
+CTA.propTypes = {
+  image: PropTypes.object,
+  link: PropTypes.string,
+  text: PropTypes.string,
+}
+
+export default CTA
