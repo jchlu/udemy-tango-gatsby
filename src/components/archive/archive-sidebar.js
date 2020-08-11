@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
+import PropTypes from 'prop-types'
 import SidebarContact from '../sidebar-contact'
 import tangoPage from '../../images/tango-page-icon.svg'
 
@@ -48,6 +48,11 @@ const ArchiveSidebar = ({ catId, categories }) => {
       </SidebarMenu>
     </SidebarWrapper>
   )
+}
+
+ArchiveSidebar.propTypes = {
+  catId: PropTypes.string,
+  categories: PropTypes.array,
 }
 
 export default ArchiveSidebar
