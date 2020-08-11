@@ -18,7 +18,7 @@ import {
 const archiveTemplate = ({
   data: {
     file,
-    allWordpressPost: { edges },
+    allWordpressPost: { nodes },
   },
   pageContext: {
     catId,
@@ -48,20 +48,18 @@ const archiveTemplate = ({
             totalPages={numberOfPages}
           />
           <h1 dangerouslySetInnerHTML={{ __html: catName }} />
-          {edges.map(post => (
-            <article key={post.node.id} className="entry-content">
-              <Link to={`/trends/${post.node.slug}/`}>
-                <StyledH2
-                  dangerouslySetInnerHTML={{ __html: post.node.title }}
-                />
+          {nodes.map(post => (
+            <article key={post.id} className="entry-content">
+              <Link to={`/trends/${post.slug}/`}>
+                <StyledH2 dangerouslySetInnerHTML={{ __html: post.title }} />
               </Link>
               <StyledDate
                 dangerouslySetInnerHTML={{
-                  __html: post.node.date,
+                  __html: post.date,
                 }}
               />
-              <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-              <StyledReadMore to={`/trends/${post.node.slug}`}>
+              <p dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+              <StyledReadMore to={`/trends/${post.slug}`}>
                 Read More
               </StyledReadMore>
               <div className="dot_divider">
@@ -89,14 +87,12 @@ export const pageQuery = graphql`
       skip: $skip
       limit: $limit
     ) {
-      edges {
-        node {
-          id
-          title
-          excerpt
-          slug
-          date(formatString: "DD MMM YYYY")
-        }
+      nodes {
+        id
+        title
+        excerpt
+        slug
+        date(formatString: "DD MMM YYYY")
       }
     }
     file(relativePath: { eq: "archive_headerImage.jpg" }) {
