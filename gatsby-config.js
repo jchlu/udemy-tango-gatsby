@@ -3,6 +3,7 @@ module.exports = {
     title: `Tango Brand Alliance`,
     description: `Tango Brand Alliance site`,
     author: `@jchlu`,
+    trendParent: `alla-trendspaningar`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
