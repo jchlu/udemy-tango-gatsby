@@ -15,7 +15,7 @@ import {
   StyledReadMore,
 } from './styles/archiveStyles'
 
-const archiveTemplate = ({
+const ArchiveTemplate = ({
   data: {
     file,
     allWordpressPost: { nodes },
@@ -78,7 +78,7 @@ const archiveTemplate = ({
   </Layout>
 )
 
-export default archiveTemplate
+export default ArchiveTemplate
 
 export const pageQuery = graphql`
   query($catId: String!, $skip: Int!, $limit: Int!) {

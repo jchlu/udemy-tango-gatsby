@@ -22,15 +22,13 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
           id
           wordpress_id
           wordpress_parent
-          status
           link
         }
       }
-      allWordpressPost {
+      allWordpressPost(filter: { status: { eq: "publish" } }) {
         nodes {
           id
           link
-          status
           categories {
             id
           }
@@ -49,8 +47,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
   if (categories.errors) {
     throw new Error(categories.errors)
-  } else if (pages.errors) {
-    throw new Error(pages.errors)
+  } else if (posts.errors) {
+    throw new Error(posts.errors)
   }
 
   categories.forEach(category => {
@@ -81,8 +79,8 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }
   })
 
-  if (posts.errors) {
-    throw new Error(posts.errors)
+  if (pages.errors) {
+    throw new Error(pages.errors)
   }
   pages.forEach(page => {
     const {
@@ -98,6 +96,16 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
         id,
         wpParent,
         wpId,
+      },
+    })
+  })
+
+  posts.forEach(post => {
+    createPage({
+      path: `/trends${post.link}`,
+      component: slash(postTemplate),
+      context: {
+        id: post.id,
       },
     })
   })
