@@ -51,6 +51,7 @@ export const postQuery = graphql`
         name
       }
       categories {
+        id
         name
         slug
       }
